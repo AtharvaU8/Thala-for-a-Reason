@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thala For a Reason!!</title>
+  <style>
+  body a:link {
+
+	text-decoration: none;
+
+	color: unset;
+}
+body a:visited {
+	text-decoration: none;
+	color: unset;
+}
+body a:hover {
+	text-decoration: none;
+	color: unset;
+}
+
+body a:active {
+	text-decoration: none;
+	color: unset;
+}
+    body {
+     background-color: #03e5b7;
+    background-image: linear-gradient(315deg, #03e5b7 0%, #037ade 74%);
+      font-family: 'Quicksand', sans-serif;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .main {
+      background-color: #ffffff;
+      padding: 35px;
+      box-shadow: 2.5px 5px 10px black;
+      text-align: center;
+    }
+    
+    #myVideo {
+      width: 320px;
+      margin: auto;
+      width: 100%;
+      max-width: 500px;
+    }
+    #text{
+      font-weight: 400;
+    }
+    #dynamicText {
+      font-size: 24px;
+      font-weight: 300;
+      margin-bottom: 30px;
+    }
+    #copyButton {
+      background-color: #325cff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <h1 id="text">Yo! Thala For a Reason</h1>
+    <div id="dynamicText"></div>
+  
+    <video id="myVideo" controls autoplay loop>
+      <source src="thala.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <div id="copyLinkBox">
+      <a href="index.html"><button id="copyButton">Thala is the Reason || Click and Enjoy</button></a>
+    </div>
+  </div>
+  <script>
+    // Get the word parameter from the URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const word = urlParams.get('word');
+    // Display the dynamic text
+    const dynamicText = document.getElementById('dynamicText');
+    dynamicText.textContent = word.split('').join('+') + "= 7 Thala For a Reason";  
+  </script>
+</body>
+</html>
