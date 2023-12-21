@@ -2,9 +2,6 @@
 <html lang="en">
 <head>
   <title>Thala For a Reason!!</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
   <link rel="shortcut icon" type="image/x-icon" href="icon.jpg" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -44,7 +41,6 @@ body a:active {
     }
 
     .main {
-      margin-bottom: 75px;	
       background-color: #ffffff;
       padding: 35px;
       box-shadow: 2.5px 5px 10px black;
@@ -107,7 +103,13 @@ body a:active {
     const word = urlParams.get('word');
     // Display the dynamic text
     const dynamicText = document.getElementById('dynamicText');
-    dynamicText.textContent = word.split('').join('+') + "= 7 Thala For a Reason";  
+    
+    if (word.length === 7 || word === '7') {
+      dynamicText.textContent = word.split('').join('+') + "= 7 Thala For a Reason";  
+    }
+    else{
+      dynamicText.textContent = word + " Thala For a Reason";  
+    }
   </script>
 </body>
 </html>

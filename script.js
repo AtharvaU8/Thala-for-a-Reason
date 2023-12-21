@@ -1,5 +1,5 @@
 var sound1 = new Audio('thala.mp3');
-function showCheckButton() {
+  function showCheckButton() {
       const relatedVideo = document.getElementById('img');
       const resultDiv = document.getElementById('result');
       const myVideo = document.getElementById('myVideo');
@@ -16,10 +16,12 @@ function showCheckButton() {
         sound1.pause();
         sound1.currentTime = 0; // Reset audio to the beginning
       }
+  }
+    function isNumeric(value) {
+      return /^\d+$/.test(value) || /^\d*\.\d+$/.test(value);
     }
     function checkWord() {
-     
-      const input = document.getElementById('wordInput').value.replace(/\s/g, ''); // Remove spaces
+      const input = document.getElementById('wordInput').value.replace(/\s/g, '');
       const resultDiv = document.getElementById('result');
       const myVideo = document.getElementById('myVideo');
       const relatedVideo = document.getElementById('img');
@@ -29,7 +31,7 @@ function showCheckButton() {
       sound1.pause();
       sound1.currentTime = 0;
       
-      if (input.length === 7) {
+      if (input.length === 7 || input === '7' || (isNumeric(input) && parseFloat(input) === 7)) {
         resultDiv.style.display = 'block';
         resultDiv.textContent = input.split('').join('+') + "= 7 Thala For a Reason";
         myVideo.style.display = 'block';
@@ -38,7 +40,18 @@ function showCheckButton() {
         copyLinkBox.style.display = 'inline-block';
         shareLink.href = `thala.html?word=${input}`;
         shareLink.textContent = shareLink.href;
-      } else {
+      } 
+      else if (input.toLowerCase() === 'thala' || input.toLowerCase() === 'msd' || input.toLowerCase() === 'ms dhoni' || input.toLowerCase() === 'dhoni' || input.toLowerCase() === 'msd7' || input.toLowerCase() === 'seven' ){
+        resultDiv.style.display = 'block';
+        resultDiv.textContent = input + " Thala For a Reason";
+        myVideo.style.display = 'block';
+        myVideo.play();
+        relatedVideo.style.display = 'none';
+        copyLinkBox.style.display = 'inline-block';
+        shareLink.href = `thala.html?word=${input}`;
+        shareLink.textContent = shareLink.href;
+      }
+      else {
         sound1.play()
         resultDiv.style.display = 'block';
         const relatedMessage = `${input.split('').join('+')} ≠ 7 Thala is not a Reason`;
