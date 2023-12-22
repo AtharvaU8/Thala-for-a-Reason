@@ -31,7 +31,7 @@ var sound1 = new Audio('thala.mp3');
       sound1.pause();
       sound1.currentTime = 0;
       
-      if (input.length === 7 || input === '7' || (isNumeric(input) && parseFloat(input) === 7)) {
+      if (input.length === 7 || input === '7' || (isNumeric(input) && parseFloat(input) === 7) || input === '07' || input === '16' || input === '25' || input === '34' || input === '43' || input === '52' || input === '61' || input === '70') {
         resultDiv.style.display = 'block';
         resultDiv.textContent = input.split('').join('+') + "= 7 Thala For a Reason";
         myVideo.style.display = 'block';
