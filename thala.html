@@ -98,17 +98,51 @@ body a:active {
     <a href="https://atharva-portfolio.netlify.app/"><h1 id="name">~Made by Atharva</h1></a>
   </div>
   <script>
-    // Get the word parameter from the URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const word = urlParams.get('word');
-    // Display the dynamic text
-    const dynamicText = document.getElementById('dynamicText');
-    
-    if (word.length === 7 || word === '7') {
-      dynamicText.textContent = word.split('').join('+') + "= 7 Thala For a Reason";  
+    const decodedResultDiv = document.getElementById('dynamicText');
+
+    // Custom decoding function
+    function customDecode(input) {
+      const decodingMap = {
+        'x': 'a',
+        'y': 'b',
+        'z': 'c',
+        'a': 'd',
+        'b': 'e',
+        'c': 'f',
+        'd': 'g',
+        'e': 'h',
+        'f': 'i',
+        'g': 'j',
+        'h': 'k',
+        'i': 'l',
+        'j': 'm',
+        'k': 'n',
+        'l': 'o',
+        'm': 'p',
+        'n': 'q',
+        'o': 'r',
+        'p': 's',
+        'q': 't',
+        'r': 'u',
+        's': 'v',
+        't': 'w',
+        'u': 'x',
+        'v': 'y',
+        'w': 'z',
+        '_': ' ',
+      };
+      return input.split('').map(char => decodingMap[char] || char).join('');
     }
-    else{
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const encodedWord = urlParams.get('word');
+    const word = customDecode(encodedWord);
+    if(word.toLowerCase() === 'thala' || word.toLowerCase() === 'msd' || word.toLowerCase() === 'ms dhoni' || word.toLowerCase() === 'dhoni' || word.toLowerCase() === 'msd7' || word.toLowerCase() === 'seven' ){
       dynamicText.textContent = word + " Thala For a Reason";  
+    }
+    else {
+      dynamicText.textContent = word.split('').join('+') + "= 7 Thala For a Reason";  
     }
   </script>
 </body>
