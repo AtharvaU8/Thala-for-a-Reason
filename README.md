@@ -4,7 +4,9 @@ This is a fun web project based on the famous "Thala for a reason" meme, which o
 
 ## Usage
 
-<img src="https://imgur.com/zDD3JPt.gif">
+![download](https://github.com/user-attachments/assets/d1cb8d0f-d402-49d4-af45-88bbdc1cf432)
+
+
 
 ## What is "Thala for a Reason"?  
 
